@@ -1,0 +1,51 @@
+syntax = "proto3";
+
+package fortress;
+
+option go_package = "github.com/Ananto30/go-grpc/proto/fortress";
+
+import "proto/common/error.proto";
+import "proto/fortress/fortress.proto";
+
+service Fortress {
+    rpc GetCampaign(ReqGetCampaign) returns (RespGetCampaign);
+    rpc CreateCampaign(ReqCreateCampaign) returns (RespCampaign);
+    rpc UpdateCampaign(ReqUpdateCampaign) returns (RespCampaign);
+}
+
+message ReqGetCampaign {
+    string id = 1;
+}
+
+message RespGetCampaign {
+    Campaign campaign = 1;
+    common.Error error = 2;
+}
+
+message ReqCreateCampaign {
+    string title = 1;
+    string code = 2;
+    string partner = 3;
+    double burn_sharing = 4;
+    int64 budget = 5;
+    string status = 6;
+    bool all_users = 7;
+    repeated string ties = 8;
+}
+
+message ReqUpdateCampaign {
+    string id = 1;
+    string title = 2;
+    string code = 3;
+    string partner = 4;
+    double burn_sharing = 5;
+    int64 budget = 6;
+    string status = 7;
+    bool all_users = 8;
+    repeated string ties = 9;
+}
+
+message RespCampaign {
+    Campaign campaign = 1;
+    common.Error error = 2;
+}

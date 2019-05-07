@@ -1,0 +1,8 @@
+*.env
+*.log
+*.key
+.vscode
+.netrc
+.DS_Store
+secrets
+storage

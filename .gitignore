@@ -1,0 +1,12 @@
+vendor
+*.env
+*.log
+*.key
+.DS_Store
+.vscode
+.netrc
+secrets
+storage
+Makefile
+cover.out
+debug

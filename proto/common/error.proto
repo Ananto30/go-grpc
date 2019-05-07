@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package common;
+
+option go_package = "github.com/Ananto30/go-grpc/proto/common";
+
+message Error {
+	message Detail {
+		string field = 1;
+		repeated string messages = 2;
+	}
+	string id = 1;
+	string code = 2;
+	int32 status = 3;
+	string title = 4;
+	repeated Detail details = 5;
+}
